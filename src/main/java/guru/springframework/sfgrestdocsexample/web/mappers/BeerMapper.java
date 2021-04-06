@@ -1,8 +1,9 @@
 package guru.springframework.sfgrestdocsexample.web.mappers;
 
+import org.mapstruct.Mapper;
+
 import guru.springframework.sfgrestdocsexample.domain.Beer;
 import guru.springframework.sfgrestdocsexample.web.model.BeerDto;
-import org.mapstruct.Mapper;
 
 /**
  * Created by jt on 2019-05-25.

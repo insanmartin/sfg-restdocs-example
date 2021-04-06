@@ -9,6 +9,7 @@ import java.time.ZoneOffset;
 /**
  * Created by jt on 2019-05-25.
  */
+//class to convert from java sql timestamp to OffsetDateTiem and vice versa
 @Component
 public class DateMapper {
     public OffsetDateTime asOffsetDateTime(Timestamp ts){
