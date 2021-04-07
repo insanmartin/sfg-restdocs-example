@@ -16,6 +16,7 @@ import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -86,12 +87,13 @@ class BeerControllerTest {
                 				parameterWithName( "iscold" ).description( "Is Beer Cold Query param." ) 
         				),
                 		//documentation of the response (returned object)
-                		//it's required to write all the fields  
+                		//it's required to write all the fields
+                		//you can inform of the field type
                 		responseFields(
-                				fieldWithPath( "id" ).description( "Id of Beer" ),
+                				fieldWithPath( "id" ).description( "Id of Beer" ).type( UUID.class ),
                                 fieldWithPath("version").description("Version number"),
-                                fieldWithPath("createdDate").description("Date Created"),
-                                fieldWithPath("lastModifiedDate").description("Date Updated"),
+                                fieldWithPath("createdDate").description("Date Created").type( OffsetDateTime.class ),
+                                fieldWithPath("lastModifiedDate").description("Date Updated").type( OffsetDateTime.class ),
                                 fieldWithPath("beerName").description("Beer Name"),
                                 fieldWithPath("beerStyle").description("Beer Style"),
                                 fieldWithPath("upc").description("UPC of Beer"),
